@@ -6,9 +6,24 @@
 </head>
 <body>
   <form>
-    <label for="motdepasse">Votre mot de passe : </label><input type="text" name="motdepasse" value="" id="motdepasse" />
-    <label for="confirmation">Confirmez : </label><input type="text" name="confirmation" value="" id="confirmation" />
-    <button type="button" name="button" >Vérification</button>
+    <label for="motdepasse">Votre mot de passe : </label><input type="password" name="motdepasse" value="" id="motdepasse" />
+    <label for="confirmation">Confirmez : </label><input type="password" name="confirmation" value="" id="confirmation" />
+    <button onclick="verif()" type="button" name="button" >Vérification</button>
   </form>
+    <script>
+        var mdp = document.getElementById('motdepasse');
+        var confir = document.getElementById('confirmation');
+
+        function verif() {
+            if (mdp.value == confir.value) {
+                mdp.style.borderColor = "green";
+                confir.style.borderColor = "green";
+            } else {
+                mdp.style.borderColor = "red";
+                confir.style.borderColor = "red";
+            }
+
+        }
+    </script>
 </body>
 </html>
